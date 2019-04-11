@@ -1,0 +1,80 @@
+#include <iostream>
+
+
+
+
+void fillArray(int array[], int size);
+void printArray(int array[], int size);
+void doubleValues(int array[], int size);
+void sumValues(int array[], int size);
+
+
+
+
+int main(){
+    const int SIZE = 10;
+    int list[SIZE] = {0};
+
+    fillArray(list, SIZE);
+    std::cout << "Printing Beginning Array Values" << std::endl;
+    printArray(list, SIZE);
+
+// spacing
+    std::cout << std::endl;
+
+// double values
+    doubleValues(list, SIZE);
+    std::cout << "Printing Doubled Array Values" << std::endl;
+    printArray(list, SIZE);
+
+// spacing
+    std::cout << std::endl;
+
+// summed values
+    std::cout << "Printing Summed Array Values" << std::endl;
+    sumValues(list, SIZE);
+    std::cout << "Array total: " << list[10];
+
+    return 0;
+}
+
+void fillArray(int array[], int size){
+
+    int num = 0;
+    for(int i = 0; i < size; i++){
+        array[i] = array[i] + num;
+        num += 2;
+    }
+}
+
+void printArray(int array[], int size){
+
+    for(int i = 0; i < size; i++){
+        std::cout << array[i] << " ";
+    }
+
+}
+
+void doubleValues(int array[], int size){
+
+    for(int i = 0; i < size; i++){
+        array[i] = array[i] * 2;
+    }
+}
+
+void sumValues(int array[], int size){
+
+    for(int i = 0; i < size; i++){
+        array[i + 1] = array[i] + array[i + 1];
+    }
+
+    //print sum values
+
+    for(int i = 0; i < size - 1; i++){
+        std::cout << i + 1 << ": " << array[i + 1] << std::endl;
+    }
+
+    std::cout << "Array total: " << array[9] << std::endl;
+}
+
+
