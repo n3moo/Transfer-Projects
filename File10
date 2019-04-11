@@ -1,0 +1,38 @@
+#include <iostream>
+#include <fstream>
+
+
+void fileRead();
+
+int main() {
+//    std::cout << "Hello, World!" << std::endl;
+//
+//    //name the file and library being used
+//    std::ofstream myfile;
+//    //open the file
+//    myfile.open ("data.rtf");
+//    //manipulate the file
+//    myfile << "This is the rtf fileeeeeee.\n";
+//    //close the file
+//    myfile.close();
+
+    fileRead();
+
+
+    return 0;
+}
+
+void fileRead(){
+
+
+    std::ifstream myfile;
+    myfile.open ("data.rtf");
+
+    int hold = 0;
+    while(!myfile.eof()){
+        myfile >> hold;
+        std::cout << hold;
+
+    }
+
+}
