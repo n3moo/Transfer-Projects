@@ -1,0 +1,58 @@
+#include <iostream>
+#include <iomanip>
+
+
+void getSalesPrice(double pricesIn[], const int SIZE);
+void actualSalesPrice(double pricesIn[], const int SIZE);
+void printPrices(double pricesIN[], const int SIZE);
+
+
+
+
+int main() {
+    const int SIZE = 10;
+    double prices[] = {0.0};
+
+    getSalesPrice(prices, SIZE);
+    actualSalesPrice(prices,SIZE);
+    printPrices(prices,SIZE);
+
+
+
+    return 0;
+}
+
+void getSalesPrice(double pricesIn[], const int SIZE){
+
+    for(int i = 0; i < SIZE; i++){
+
+        std::cout << "Enter a price for the " << i + 1 << " item: " << std::endl;
+        std::cin >> pricesIn[i];
+
+    }
+
+}
+
+void actualSalesPrice(double pricesIn[], const int SIZE){
+
+    for(int i = 0; i < SIZE; i++){
+
+        pricesIn[i] = (pricesIn[i] * 0.07) + pricesIn[i];
+
+    }
+
+}
+
+void printPrices(double pricesIn[], const int SIZE){
+
+    std::cout << std::setprecision(3);
+
+    for(int i = 0; i < SIZE; i++){
+
+        std::cout << "The price for the " << i << " item is: " << pricesIn[i] << std::endl;
+
+
+    }
+
+}
+
